@@ -58,3 +58,10 @@
 .solar-page .btn-primary,.solar-page .btn-dark,.solar-page .header-cta,.solar-page .hero-contact-cta{transition:background .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease}
 .solar-page .btn-primary:hover,.solar-page .btn-dark:hover,.solar-page .header-cta:hover,.solar-page .hero-contact-cta:hover{box-shadow:0 8px 24px rgba(0,0,0,.09)}
 @media(prefers-reduced-motion:reduce){.reveal-item{opacity:1;transform:none}.hero-content .eyebrow,.hero-content h1,.hero-content>p,.hero-content .hero-actions,.hero-content .hero-proof,.hero-stat{animation:none}.hero .hero-image{transform:none}}
+
+
+/* Cleaner, minimal WhatsApp mark in the header */
+.solar-page .header-actions .whatsapp-link{color:var(--foreground);background:transparent;border:0;border-radius:50%;width:36px;height:36px;padding:0}
+.solar-page .header-actions .whatsapp-link svg{width:21px;height:21px;fill:currentColor;stroke:none}
+.solar-page .header-actions .whatsapp-link:hover{color:#16845b;background:transparent;border-color:transparent;transform:translateY(-1px)}
+@media(max-width:760px){.solar-page .header-actions .whatsapp-link{width:34px;height:36px}.solar-page .header-actions .whatsapp-link svg{width:20px;height:20px}}
