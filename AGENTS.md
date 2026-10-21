@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Render solution and project photography as lazy-loaded images with intrinsic dimensions and descriptive alt text; import generated photos directly and uploaded photos through asset pointers to keep media loading stable.
