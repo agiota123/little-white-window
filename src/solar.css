@@ -21,3 +21,14 @@
 .solar-page .footer-contact-cta span{font:400 22px 'Instrument Serif',serif;color:var(--solar-on-dark)}
 .solar-page .footer-contact-cta .btn-primary{margin:0;white-space:nowrap}
 @media(max-width:760px){.solar-page .header-actions{gap:0}.solar-page .header-actions .social-icon{width:36px;height:42px}.solar-page .hero-contact-cta{min-width:210px}.solar-page .contact-number{max-width:100%;flex-wrap:wrap}.solar-page .contact-number strong{margin-left:auto}.solar-page .footer-contact-cta{align-items:flex-start;flex-direction:column;gap:14px}.solar-page .footer-contact-cta span{font-size:20px}}
+
+
+/* Minimal social icons in the header */
+.solar-page .header-actions{gap:8px}
+.solar-page .header-actions .social-icon{width:36px;height:36px;border:1px solid transparent;background:transparent;color:var(--muted-foreground);transition:color var(--solar-fast),background var(--solar-fast),border-color var(--solar-fast)}
+.solar-page .header-actions .social-icon svg{width:18px;height:18px;stroke-width:1.5}
+.solar-page .header-actions .social-icon:not(:disabled):hover,.solar-page .header-actions .whatsapp-link:hover{color:var(--primary);background:var(--secondary);border-color:var(--border)}
+.solar-page .header-actions .social-icon:disabled{opacity:.8}
+.solar-page .header-actions .whatsapp-link{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid transparent;border-radius:50%;color:var(--muted-foreground);transition:color var(--solar-fast),background var(--solar-fast),border-color var(--solar-fast)}
+.solar-page .header-actions .whatsapp-link svg{display:block;width:18px;height:18px;fill:currentColor}
+@media(max-width:760px){.solar-page .header-actions{gap:2px}.solar-page .header-actions .social-icon,.solar-page .header-actions .whatsapp-link{width:34px;height:36px}}
