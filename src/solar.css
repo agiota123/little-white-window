@@ -10,6 +10,6 @@
 @media (prefers-reduced-motion:reduce){.hero-image,.toggle-icon{transition:none}}
 
 /* Keep solar equipment visible rather than washing photos out. */
-.solution-image{display:block;width:calc(100% + 50px);object-fit:cover;height:160px;flex-shrink:0}
+.solution-image{display:block;width:calc(100% + 50px);max-width:none;object-fit:cover;height:160px;flex-shrink:0}
 @media(max-width:900px){.solution-image{width:calc(100% + 38px)}}
 @media(max-width:680px){.solution-image{width:calc(100% + 46px);height:180px}}
