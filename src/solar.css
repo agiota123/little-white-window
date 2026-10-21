@@ -73,3 +73,10 @@
 .solar-page .header-actions .whatsapp-link:hover{color:#16845b;background:transparent;border:0;transform:translateY(-1px)}
 .solar-page .header-actions .whatsapp-link:focus-visible{outline:2px solid var(--ring);outline-offset:3px}
 @media(max-width:760px){.solar-page .header-actions .whatsapp-link{width:34px;height:36px}.solar-page .header-actions .whatsapp-link svg{width:19px;height:19px}}
+
+/* Minimal social links in the header */
+.solar-page .header-actions .header-social-link{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;color:var(--muted-foreground);background:transparent;border:0;border-radius:50%;transition:color .2s ease,transform .2s ease}
+.solar-page .header-actions .header-social-link svg{width:18px;height:18px;display:block}
+.solar-page .header-actions .header-social-link:hover{color:var(--primary);background:transparent;transform:translateY(-1px)}
+.solar-page .header-actions .header-social-link:focus-visible{outline:2px solid var(--ring);outline-offset:3px}
+@media(max-width:760px){.solar-page .header-actions .header-social-link{width:30px;height:34px}.solar-page .header-actions .header-social-link svg{width:17px;height:17px}}
