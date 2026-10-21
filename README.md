@@ -1,24 +1,24 @@
-# Energia Solar
+# Solar System — Site modelo de energia solar
 
-faca apenas uma tela branca, gaste o mínimo de créditos possível
+Landing page responsiva para uma empresa de energia solar, construída com React, TypeScript, TanStack Start e Vite.
 
-This project was built with [Lovable](https://lovable.dev).
+## O que está incluído
 
-## Build with Lovable
+- Hero com alternância interativa entre imagem de dia e de noite.
+- Soluções residenciais, comerciais e armazenamento.
+- Seção de vantagens e processo de instalação.
+- Calculadora ilustrativa de economia, potência estimada, módulos e geração mensal.
+- Galeria de projetos, formulário demonstrativo e navegação responsiva.
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/82cfba21-8f0a-42d3-a5b8-e383a2483dcc).
+## Observações
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+A calculadora usa valores médios de referência para fins demonstrativos; não substitui um orçamento ou projeto técnico. A economia real depende da tarifa, irradiação, telhado, consumo e regras da distribuidora. O formulário ainda não está conectado a um serviço de envio.
 
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Desenvolvimento
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
+
+O projeto está conectado ao Lovable; os commits na branch principal são sincronizados com o editor.
