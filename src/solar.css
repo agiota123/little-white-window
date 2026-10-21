@@ -80,3 +80,12 @@
 .solar-page .header-actions .header-social-link:hover{color:var(--primary);background:transparent;transform:translateY(-1px)}
 .solar-page .header-actions .header-social-link:focus-visible{outline:2px solid var(--ring);outline-offset:3px}
 @media(max-width:760px){.solar-page .header-actions .header-social-link{width:30px;height:34px}.solar-page .header-actions .header-social-link svg{width:17px;height:17px}}
+
+/* Keep the 95% savings badge clear of the hero proof text on mobile */
+@media(max-width:760px){
+  .hero-stat{padding:11px 14px;gap:6px}
+  .hero-stat .stat-icon{width:30px;height:30px}
+  .hero-stat strong{font-size:19px}
+  .hero-stat strong b{font-size:27px}
+  .hero-stat small{font-size:8px}
+}
