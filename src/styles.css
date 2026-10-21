@@ -142,3 +142,33 @@
     color: var(--color-foreground);
   }
 }
+
+/* Solar System — cream, pine and sunlit brass. */
+:root {
+ --background: oklch(0.978 0.013 87);
+ --foreground: oklch(0.26 0.026 157);
+ --primary: oklch(0.38 0.062 160);
+ --primary-foreground: oklch(0.985 0.01 87);
+ --secondary: oklch(0.94 0.02 87);
+ --secondary-foreground: var(--foreground);
+ --card: oklch(0.991 0.007 87);
+ --card-foreground: var(--foreground);
+ --muted: oklch(0.945 0.013 87);
+ --muted-foreground: oklch(0.49 0.017 157);
+ --accent: oklch(0.82 0.084 83);
+ --accent-foreground: var(--foreground);
+ --border: oklch(0.875 0.018 87);
+ --input: var(--border);
+ --ring: var(--primary);
+ --solar-dark: oklch(0.25 0.035 160);
+ --solar-on-dark: oklch(0.97 0.015 87);
+ --solar-muted-dark: oklch(0.81 0.023 140);
+ --solar-glass: oklch(0.98 0.01 87 / 0.11);
+ --solar-glass-border: oklch(0.98 0.01 87 / 0.28);
+ --solar-overlay: linear-gradient(90deg, oklch(0.19 0.024 160 / 0.82), oklch(0.19 0.024 160 / 0.36) 56%, oklch(0.19 0.024 160 / 0.04));
+ --solar-image-overlay: linear-gradient(transparent, oklch(0.2 0.03 160 / 0.86));
+ --solar-shadow: 0 20px 60px oklch(0.26 0.025 157 / 0.08);
+ --solar-fast: 200ms;
+ --solar-normal: 550ms;
+ --solar-ease: cubic-bezier(.45,0,.15,1);
+}
