@@ -89,3 +89,24 @@
   .hero-stat strong b{font-size:27px}
   .hero-stat small{font-size:8px}
 }
+
+/* Sticky light-blue header across desktop and mobile */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:#dff2ff;
+  box-shadow:0 1px 12px rgba(25,75,110,.08);
+}
+.site-header .brand,
+.site-header .main-nav a,
+.site-header .header-social-link,
+.site-header .header-cta{color:#17384d}
+.site-header .brand-mark{border-color:rgba(23,56,77,.18)}
+.site-header .main-nav a:after{background:#287eae}
+.solar-page .site-header .header-cta{background:#287eae;color:#fff}
+.solar-page .site-header .header-cta:hover{background:#1d638b}
+@media(max-width:760px){
+  .site-header{position:sticky;top:0;background:#dff2ff}
+  .site-header .main-nav{background:#dff2ff}
+}
