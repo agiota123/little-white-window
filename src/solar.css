@@ -32,3 +32,29 @@
 .solar-page .header-actions .whatsapp-link{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid transparent;border-radius:50%;color:var(--muted-foreground);transition:color var(--solar-fast),background var(--solar-fast),border-color var(--solar-fast)}
 .solar-page .header-actions .whatsapp-link svg{display:block;width:18px;height:18px;fill:currentColor}
 @media(max-width:760px){.solar-page .header-actions{gap:2px}.solar-page .header-actions .social-icon,.solar-page .header-actions .whatsapp-link{width:34px;height:36px}}
+
+
+/* Immersive, restrained motion */
+@keyframes solarHeroEnter{from{opacity:0;transform:translate3d(0,22px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes solarGlow{0%,100%{opacity:.8;transform:scale(1)}50%{opacity:1;transform:scale(1.035)}}
+.hero-content .eyebrow{animation:solarHeroEnter .75s cubic-bezier(.2,.7,.2,1) both}
+.hero-content h1{animation:solarHeroEnter .9s .08s cubic-bezier(.2,.7,.2,1) both}
+.hero-content>p{animation:solarHeroEnter .85s .18s cubic-bezier(.2,.7,.2,1) both}
+.hero-content .hero-actions{animation:solarHeroEnter .85s .28s cubic-bezier(.2,.7,.2,1) both}
+.hero-content .hero-proof{animation:solarHeroEnter .85s .38s cubic-bezier(.2,.7,.2,1) both}
+.hero-stat{animation:solarHeroEnter .9s .42s cubic-bezier(.2,.7,.2,1) both}
+.hero .hero-image{transform:scale(1.025);transition:opacity var(--solar-normal) var(--solar-ease),transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.hero:hover .hero-layer-day,.hero:hover .hero-layer-night{transform:scale(1.055)}
+.reveal-item{opacity:0;transform:translate3d(0,24px,0);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1)}
+.reveal-item.is-visible{opacity:1;transform:translate3d(0,0,0)}
+.solution-card:nth-child(2),.process-grid article:nth-child(2),.project-gallery figure:nth-child(2){transition-delay:.08s}
+.solution-card:nth-child(3),.process-grid article:nth-child(3),.project-gallery figure:nth-child(3){transition-delay:.16s}
+.process-grid article:nth-child(4){transition-delay:.24s}
+.solution-image,.benefits-visual>img,.project-gallery img{transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .6s ease}
+.solution-card:hover .solution-image,.benefits-visual:hover>img{transform:scale(1.025);filter:saturate(1.06)}
+.project-gallery figure:hover img{transform:scale(1.045)}
+.solar-page .header-actions .social-icon,.solar-page .header-actions .whatsapp-link{transition:transform .25s ease,color .25s ease,background .25s ease,border-color .25s ease}
+.solar-page .header-actions .social-icon:hover,.solar-page .header-actions .whatsapp-link:hover{transform:translateY(-2px)}
+.solar-page .btn-primary,.solar-page .btn-dark,.solar-page .header-cta,.solar-page .hero-contact-cta{transition:background .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease}
+.solar-page .btn-primary:hover,.solar-page .btn-dark:hover,.solar-page .header-cta:hover,.solar-page .hero-contact-cta:hover{box-shadow:0 8px 24px rgba(0,0,0,.09)}
+@media(prefers-reduced-motion:reduce){.reveal-item{opacity:1;transform:none}.hero-content .eyebrow,.hero-content h1,.hero-content>p,.hero-content .hero-actions,.hero-content .hero-proof,.hero-stat{animation:none}.hero .hero-image{transform:none}}
