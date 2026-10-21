@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Sun, Moon, ArrowUpRight, Zap, House, Building2, BatteryCharging, Check, Menu, X, Leaf, ShieldCheck, CircleDollarSign, ChevronDown, Sparkles, Instagram, MessageCircle } from "lucide-react";
 import "../solar.css";
@@ -23,6 +23,26 @@ export const Route = createFileRoute("/")({
 });
 
 function SolarHome() {
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const targets = document.querySelectorAll(
+      ".trust-strip, .intro-heading, .solution-card, .benefits-visual, .benefits-copy, .calculator-copy, .calculator-card, .process-heading, .process-grid article, .projects-top, .project-gallery figure, .contact-inner, .contact-side, .footer-main"
+    );
+    if (!("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: "0px 0px -35px 0px" });
+    targets.forEach((target) => {
+      target.classList.add("reveal-item");
+      observer.observe(target);
+    });
+    return () => observer.disconnect();
+  }, []);
   const [night, setNight] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [bill, setBill] = useState(650);
