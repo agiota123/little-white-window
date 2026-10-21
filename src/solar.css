@@ -65,3 +65,11 @@
 .solar-page .header-actions .whatsapp-link svg{width:21px;height:21px;fill:currentColor;stroke:none}
 .solar-page .header-actions .whatsapp-link:hover{color:#16845b;background:transparent;border-color:transparent;transform:translateY(-1px)}
 @media(max-width:760px){.solar-page .header-actions .whatsapp-link{width:34px;height:36px}.solar-page .header-actions .whatsapp-link svg{width:20px;height:20px}}
+
+
+/* Minimal WhatsApp icon: align with the simple Instagram control */
+.solar-page .header-actions .whatsapp-link{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--muted-foreground);text-decoration:none;line-height:1;flex-shrink:0}
+.solar-page .header-actions .whatsapp-link svg{display:block;width:19px;height:19px;fill:currentColor;stroke:none}
+.solar-page .header-actions .whatsapp-link:hover{color:#16845b;background:transparent;border:0;transform:translateY(-1px)}
+.solar-page .header-actions .whatsapp-link:focus-visible{outline:2px solid var(--ring);outline-offset:3px}
+@media(max-width:760px){.solar-page .header-actions .whatsapp-link{width:34px;height:36px}.solar-page .header-actions .whatsapp-link svg{width:19px;height:19px}}
