@@ -259,3 +259,16 @@ body.solar-intro-lock{overflow:hidden}
 @keyframes solar-intro-skip-out{
   to{opacity:0;visibility:hidden;pointer-events:none}
 }
+
+
+/* Keep the real header logo visible at all times; intro ends after a 2s hold */
+.site-header.intro-brand-hidden .brand{opacity:1!important;visibility:visible!important}
+.solar-intro-wordmark{
+  animation:solar-intro-logo-in-slow 1.15s cubic-bezier(.2,.7,.2,1) 2.15s forwards;
+}
+.solar-intro{
+  animation:solar-intro-exit .65s ease 4.25s forwards;
+}
+.solar-intro-skip{
+  animation:solar-intro-skip-out .35s ease 3.9s forwards;
+}
