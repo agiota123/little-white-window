@@ -25,12 +25,10 @@ export const Route = createFileRoute("/")({
 function SolarHome() {
   const [introVisible, setIntroVisible] = useState(true);
   useEffect(() => {
-    const key = "solar-system-intro-seen";
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || sessionStorage.getItem(key) === "1") {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setIntroVisible(false);
       return;
     }
-    sessionStorage.setItem(key, "1");
     document.body.classList.add("solar-intro-lock");
     const introLogo = document.querySelector<HTMLElement>(".solar-intro-wordmark");
     const headerBrand = document.querySelector<HTMLElement>(".site-header .brand");
