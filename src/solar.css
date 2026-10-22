@@ -323,3 +323,28 @@ body.solar-intro-lock{overflow:hidden}
 }
 .site-header.header-after-hero.header-day{background:#97cde7!important}
 .site-header.header-after-hero.header-night{background:#0c1f30!important}
+
+
+/* Final header palette/opacity rules: preserve day/night colors and keep content fully opaque */
+.site-header.header-over-hero.header-day{
+  background-color:rgb(151 205 231 / 50%)!important;
+  color:#17384d;
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+}
+.site-header.header-over-hero.header-night{
+  background-color:rgb(12 31 48 / 50%)!important;
+  color:#f2f7fb;
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+}
+.site-header.header-after-hero.header-day{
+  background-color:rgb(151 205 231 / 100%)!important;
+  -webkit-backdrop-filter:none;
+  backdrop-filter:none;
+}
+.site-header.header-after-hero.header-night{
+  background-color:rgb(12 31 48 / 100%)!important;
+  -webkit-backdrop-filter:none;
+  backdrop-filter:none;
+}
