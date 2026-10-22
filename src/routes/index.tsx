@@ -43,7 +43,7 @@ function SolarHome() {
     const finish = window.setTimeout(() => {
       setIntroVisible(false);
       document.body.classList.remove("solar-intro-lock");
-    }, 6000);
+    }, 5100);
     return () => {
       window.clearTimeout(finish);
       document.body.classList.remove("solar-intro-lock");
