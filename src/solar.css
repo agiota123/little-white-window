@@ -272,3 +272,16 @@ body.solar-intro-lock{overflow:hidden}
 .solar-intro-skip{
   animation:solar-intro-skip-out .35s ease 3.9s forwards;
 }
+
+
+/* Softer handoff from the intro to the website */
+.solar-intro{
+  animation:solar-intro-exit .9s cubic-bezier(.4,0,.2,1) 4.2s forwards;
+}
+.solar-intro-skip{
+  animation:solar-intro-skip-out .3s ease 3.9s forwards;
+}
+@keyframes solar-intro-exit{
+  from{opacity:1;visibility:visible}
+  to{opacity:0;visibility:hidden;pointer-events:none}
+}
