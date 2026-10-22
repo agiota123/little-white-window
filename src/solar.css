@@ -212,7 +212,7 @@ body.solar-intro-lock{overflow:hidden}
   left:50%;
   opacity:0;
   transform:translate(-50%,-50%);
-  animation:solar-intro-logo-hold-and-dock 2s cubic-bezier(.22,.72,.22,1) 5.9s forwards;
+  animation:solar-intro-logo-hold-and-dock 6.9s cubic-bezier(.22,.72,.22,1) 2.15s forwards;
 }
 .solar-intro-caption{animation:solar-intro-caption-in 1.2s ease 1.15s both}
 .site-header.intro-brand-hidden .brand{opacity:0;visibility:hidden}
@@ -227,8 +227,8 @@ body.solar-intro-lock{overflow:hidden}
 }
 @keyframes solar-intro-logo-hold-and-dock{
   0%{opacity:0;transform:translate(-50%,-50%) scale(.94)}
-  18%{opacity:1;transform:translate(-50%,-50%) scale(1)}
-  52%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  10%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  53%{opacity:1;transform:translate(-50%,-50%) scale(1)}
   100%{opacity:1;transform:translate(calc(-50% + var(--logo-dx, 0px)),calc(-50% + var(--logo-dy, -40vh))) scale(var(--logo-scale, .55))}
 }
 @keyframes solar-intro-background-clear{
