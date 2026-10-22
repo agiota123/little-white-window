@@ -419,3 +419,18 @@ body.solar-intro-lock{overflow:hidden}
   color:#f2f7fb!important;
   border-color:rgb(242 247 251 / 20%)!important;
 }
+
+
+/* Night header opacity: translucent navy over the hero, solid navy outside it */
+.site-header.header-over-hero.header-night{
+  background:rgb(12 31 48 / 50%)!important;
+  background-color:rgb(12 31 48 / 50%)!important;
+  -webkit-backdrop-filter:blur(14px)!important;
+  backdrop-filter:blur(14px)!important;
+}
+.site-header.header-after-hero.header-night{
+  background:#0c1f30!important;
+  background-color:#0c1f30!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
