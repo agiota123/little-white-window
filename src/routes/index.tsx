@@ -23,6 +23,28 @@ export const Route = createFileRoute("/")({
 });
 
 function SolarHome() {
+  const [introVisible, setIntroVisible] = useState(true);
+  useEffect(() => {
+    const key = "solar-system-intro-seen";
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || sessionStorage.getItem(key) === "1") {
+      setIntroVisible(false);
+      return;
+    }
+    sessionStorage.setItem(key, "1");
+    document.body.classList.add("solar-intro-lock");
+    const finish = window.setTimeout(() => {
+      setIntroVisible(false);
+      document.body.classList.remove("solar-intro-lock");
+    }, 4600);
+    return () => {
+      window.clearTimeout(finish);
+      document.body.classList.remove("solar-intro-lock");
+    };
+  }, []);
+  const skipIntro = () => {
+    setIntroVisible(false);
+    document.body.classList.remove("solar-intro-lock");
+  };
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const targets = document.querySelectorAll(
@@ -70,6 +92,14 @@ function SolarHome() {
   };
   const [need, setNeed] = useState("");
   return <main className={night ? "solar-page night-mode" : "solar-page"}>
+    {introVisible && <div className="solar-intro" role="dialog" aria-label="Abertura Solar System" aria-modal="true">
+      <button className="solar-intro-skip" type="button" onClick={skipIntro}>Pular animação <span aria-hidden="true">↗</span></button>
+      <div className="solar-intro-scene" aria-hidden="true">
+        <div className="solar-intro-orbit"><span className="solar-intro-ray ray-1"/><span className="solar-intro-ray ray-2"/><span className="solar-intro-ray ray-3"/><span className="solar-intro-ray ray-4"/><span className="solar-intro-ray ray-5"/><span className="solar-intro-ray ray-6"/><span className="solar-intro-ray ray-7"/><span className="solar-intro-ray ray-8"/><span className="solar-intro-sun"><span/></span><span className="solar-intro-beam"/></div>
+        <div className="solar-intro-wordmark"><span className="solar-intro-mark"><Sun size={29} strokeWidth={1.6}/></span><span>SOLAR<span>SYSTEM</span><small>ENERGIA QUE TRANSFORMA</small></span></div>
+      </div>
+      <div className="solar-intro-caption">ENERGIA INTELIGENTE. NOVAS POSSIBILIDADES.</div>
+    </div>}
     <header className={night ? "site-header header-night" : "site-header header-day"}>
       <a className="brand" href="#" aria-label="Solar System início"><span className="brand-mark"><Sun size={25} strokeWidth={2.2}/></span><span>SOLAR<span className="brand-light">SYSTEM</span><small>ENERGIA QUE TRANSFORMA</small></span></a>
       <Button variant="ghost" className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="Abrir menu">{menuOpen ? <X/> : <Menu/>}</Button>
