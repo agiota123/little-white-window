@@ -244,10 +244,10 @@ body.solar-intro-lock{overflow:hidden}
 
 /* End the intro cleanly after the logo has been held for three seconds */
 .solar-intro{
-  animation:solar-intro-exit .65s ease 5.25s forwards;
+  animation:solar-intro-exit .65s ease 6.25s forwards;
 }
 .solar-intro-skip{
-  animation:solar-intro-skip-out .35s ease 4.9s forwards;
+  animation:solar-intro-skip-out .35s ease 5.9s forwards;
 }
 .solar-intro-wordmark{
   animation:solar-intro-logo-in-slow 1.15s cubic-bezier(.2,.7,.2,1) 2.15s forwards;
