@@ -69,13 +69,24 @@ function SolarHome() {
     return () => observer.disconnect();
   }, []);
   useEffect(() => {
-    const hero = document.querySelector(".hero");
-    if (!hero || !("IntersectionObserver" in window)) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      setHeroHeader(entry.isIntersecting);
-    }, { threshold: 0.08 });
-    observer.observe(hero);
-    return () => observer.disconnect();
+    const hero = document.querySelector<HTMLElement>(".hero");
+    const header = document.querySelector<HTMLElement>(".site-header");
+    if (!hero || !header) return;
+
+    const updateHeaderState = () => {
+      const heroRect = hero.getBoundingClientRect();
+      const headerRect = header.getBoundingClientRect();
+      // Transparency is enabled only when the sticky header physically overlaps the hero.
+      setHeroHeader(heroRect.top < headerRect.bottom && heroRect.bottom > headerRect.top);
+    };
+
+    updateHeaderState();
+    window.addEventListener("scroll", updateHeaderState, { passive: true });
+    window.addEventListener("resize", updateHeaderState);
+    return () => {
+      window.removeEventListener("scroll", updateHeaderState);
+      window.removeEventListener("resize", updateHeaderState);
+    };
   }, []);
 
   const [night, setNight] = useState(false);
