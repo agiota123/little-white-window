@@ -193,3 +193,50 @@ body.solar-intro-lock{overflow:hidden}
   .solar-intro{display:none!important}
   body.solar-intro-lock{overflow:auto}
 }
+
+
+/* Slower, staged intro: hold the logo, fade only the cream field, then dock to header */
+.solar-intro{
+  background:#f5f0e6;
+  animation:solar-intro-background-clear 1.25s ease 5.9s forwards;
+}
+.solar-intro:before{animation:solar-intro-breathe 4s ease-in-out infinite}
+.solar-intro-skip{font-family:inherit;font-size:12px;font-weight:500;line-height:1.2}
+.solar-intro-orbit{
+  animation:solar-intro-sunrise 1.1s cubic-bezier(.2,.75,.25,1) both,
+    solar-intro-sun-fade .95s ease-in-out 2.15s forwards;
+}
+.solar-intro-beam{animation:solar-intro-beam-sweep 1.15s ease-in-out 1.65s forwards}
+.solar-intro-wordmark{
+  top:50%;
+  left:50%;
+  opacity:0;
+  transform:translate(-50%,-50%);
+  animation:solar-intro-logo-hold-and-dock 2s cubic-bezier(.22,.72,.22,1) 5.9s forwards;
+}
+.solar-intro-caption{animation:solar-intro-caption-in 1.2s ease 1.15s both}
+.site-header.intro-brand-hidden .brand{opacity:0;visibility:hidden}
+.site-header .brand{transition:opacity .18s ease}
+@keyframes solar-intro-sunrise{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.55)}
+  100%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+}
+@keyframes solar-intro-sun-fade{
+  0%{opacity:1;transform:translate(-50%,-50%) scale(1);filter:blur(0)}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(.78);filter:blur(7px)}
+}
+@keyframes solar-intro-logo-hold-and-dock{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.94)}
+  18%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  52%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  100%{opacity:1;transform:translate(calc(-50% + var(--logo-dx, 0px)),calc(-50% + var(--logo-dy, -40vh))) scale(var(--logo-scale, .55))}
+}
+@keyframes solar-intro-background-clear{
+  to{background-color:transparent}
+}
+@media(max-width:600px){
+  .solar-intro-wordmark{top:50%;left:50%}
+}
+@media(prefers-reduced-motion:reduce){
+  .site-header.intro-brand-hidden .brand{opacity:1;visibility:visible}
+}
