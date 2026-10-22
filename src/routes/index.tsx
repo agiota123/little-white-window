@@ -9,6 +9,7 @@ import solarHome from "@/assets/solar-home.jpg";
 import solarCommercial from "@/assets/solar-commercial.jpg";
 import solarBattery from "@/assets/solar-battery.jpg";
 import solarInstallation from "@/assets/solar-installation.jpg.asset.json";
+import { assetUrl } from "@/lib/asset-url";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -17,6 +18,8 @@ export const Route = createFileRoute("/")({
     { property: "og:title", content: "Solar System — Energia inteligente para sua vida" },
     { property: "og:description", content: "Energia solar com projeto inteligente, instalação segura e economia de verdade." },
     { property: "og:type", content: "website" },
+    { property: "og:image", content: assetUrl(heroDay) },
+    { name: "twitter:image", content: assetUrl(heroDay) },
     { name: "twitter:card", content: "summary_large_image" },
   ]}),
   component: SolarHome,
@@ -137,8 +140,8 @@ function SolarHome() {
       </div>
     </header>
     <section className={night ? "hero hero-night" : "hero"}>
-      <img className="hero-image hero-layer-day" src={heroDay.url} alt="Casa com energia solar durante o dia" fetchPriority="high" />
-      <img className="hero-image hero-layer-night" src={heroNight.url} alt="Casa com energia solar iluminada à noite" />
+      <img className="hero-image hero-layer-day" src={assetUrl(heroDay)} alt="Casa com energia solar durante o dia" fetchPriority="high" />
+      <img className="hero-image hero-layer-night" src={assetUrl(heroNight)} alt="Casa com energia solar iluminada à noite" />
       <div className="hero-content"><div className="eyebrow eyebrow-light"><span/> O futuro da energia começa no seu telhado</div><h1>O sol trabalha.<br/>Você <em>economiza.</em></h1><p>Transforme a luz do sol em liberdade financeira com energia solar feita sob medida para sua casa ou empresa.</p><div className="hero-actions"><Button variant="ghost" className="btn-primary" onClick={() => goTo("calculadora")}>Calcule sua economia <ArrowUpRight size={18}/></Button><Button variant="ghost" className="btn-ghost" onClick={() => goTo("solucoes")}>Conheça as soluções</Button><Button variant="ghost" className="hero-contact-cta" onClick={() => goTo("contato")}>Fale conosco <ArrowUpRight size={17}/></Button></div><div className="hero-proof"><div className="proof-avatars"><span>✓</span><span>☀</span><span>↗</span></div><div><strong>Energia inteligente, sem complicação.</strong></div></div></div>
       <Button variant="ghost" className="day-night-toggle" onClick={() => setNight(!night)} aria-label="Alternar imagem diurna e noturna"><span className={!night ? "toggle-icon active" : "toggle-icon"}><Sun size={16}/> Dia</span><span className={night ? "toggle-icon active" : "toggle-icon"}><Moon size={16}/> Noite</span></Button><div className="hero-caption"><span className="caption-line"/> SOLAR, DO SEU JEITO <span>01 / 04</span></div><div className="hero-stat"><span className="stat-icon"><Zap size={19}/></span><div><strong>Até <b>95%</b></strong><small>de redução na parcela de energia*</small></div></div>
     </section>
