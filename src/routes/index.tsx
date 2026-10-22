@@ -32,10 +32,18 @@ function SolarHome() {
     }
     sessionStorage.setItem(key, "1");
     document.body.classList.add("solar-intro-lock");
+    const introLogo = document.querySelector<HTMLElement>(".solar-intro-wordmark");
+    const headerBrand = document.querySelector<HTMLElement>(".site-header .brand");
+    if (introLogo && headerBrand) {
+      const target = headerBrand.getBoundingClientRect();
+      introLogo.style.setProperty("--logo-dx", `${target.left + target.width / 2 - window.innerWidth / 2}px`);
+      introLogo.style.setProperty("--logo-dy", `${target.top + target.height / 2 - window.innerHeight / 2}px`);
+      introLogo.style.setProperty("--logo-scale", String(Math.min(1, target.width / 250)));
+    }
     const finish = window.setTimeout(() => {
       setIntroVisible(false);
       document.body.classList.remove("solar-intro-lock");
-    }, 4600);
+    }, 8100);
     return () => {
       window.clearTimeout(finish);
       document.body.classList.remove("solar-intro-lock");
@@ -100,7 +108,7 @@ function SolarHome() {
       </div>
       <div className="solar-intro-caption">ENERGIA INTELIGENTE. NOVAS POSSIBILIDADES.</div>
     </div>}
-    <header className={night ? "site-header header-night" : "site-header header-day"}>
+    <header className={(night ? "site-header header-night" : "site-header header-day") + (introVisible ? " intro-brand-hidden" : "")}>
       <a className="brand" href="#" aria-label="Solar System início"><span className="brand-mark"><Sun size={25} strokeWidth={2.2}/></span><span>SOLAR<span className="brand-light">SYSTEM</span><small>ENERGIA QUE TRANSFORMA</small></span></a>
       <Button variant="ghost" className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="Abrir menu">{menuOpen ? <X/> : <Menu/>}</Button>
       <nav className={menuOpen ? "main-nav nav-open" : "main-nav"}><a href="#solucoes" onClick={() => setMenuOpen(false)}>Soluções</a><a href="#vantagens" onClick={() => setMenuOpen(false)}>Vantagens</a><a href="#processo" onClick={() => setMenuOpen(false)}>Como funciona</a><a href="#projetos" onClick={() => setMenuOpen(false)}>Projetos</a><a href="#calculadora" onClick={() => setMenuOpen(false)}>Calculadora</a><a href="#contato" onClick={() => setMenuOpen(false)}>Fale conosco</a></nav>
