@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Render solution and project photography as lazy-loaded images with intrinsic dimensions and descriptive alt text; import generated photos directly and uploaded photos through asset pointers to keep media loading stable.
+- Resolve Lovable asset pointers through src/lib/asset-url.ts before rendering or adding image metadata, because external hosts do not serve /__l5e/assets-v1 paths; leave generated pointer JSON unchanged.
