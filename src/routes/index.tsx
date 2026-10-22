@@ -25,10 +25,6 @@ export const Route = createFileRoute("/")({
 function SolarHome() {
   const [introVisible, setIntroVisible] = useState(true);
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setIntroVisible(false);
-      return;
-    }
     document.body.classList.add("solar-intro-lock");
     const introLogo = document.querySelector<HTMLElement>(".solar-intro-wordmark");
     const headerBrand = document.querySelector<HTMLElement>(".site-header .brand");
@@ -41,7 +37,7 @@ function SolarHome() {
     const finish = window.setTimeout(() => {
       setIntroVisible(false);
       document.body.classList.remove("solar-intro-lock");
-    }, 5100);
+    }, 5200);
     return () => {
       window.clearTimeout(finish);
       document.body.classList.remove("solar-intro-lock");
