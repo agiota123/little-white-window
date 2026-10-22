@@ -348,3 +348,35 @@ body.solar-intro-lock{overflow:hidden}
   -webkit-backdrop-filter:none;
   backdrop-filter:none;
 }
+
+
+/* Night hero header: keep the deep blue translucent background and brighten its contents */
+.site-header.header-over-hero.header-night{
+  background-color:rgb(12 31 48 / 50%)!important;
+  color:#f2f7fb!important;
+}
+.site-header.header-over-hero.header-night .brand,
+.site-header.header-over-hero.header-night .brand small,
+.site-header.header-over-hero.header-night .brand-mark,
+.site-header.header-over-hero.header-night .main-nav a,
+.site-header.header-over-hero.header-night .header-social-link,
+.site-header.header-over-hero.header-night .mobile-menu{
+  color:#f2f7fb!important;
+}
+.site-header.header-over-hero.header-night .brand-mark{
+  border-color:rgb(242 247 251 / 45%)!important;
+}
+.site-header.header-over-hero.header-night .main-nav a:after{
+  background:#f2f7fb!important;
+}
+.site-header.header-over-hero.header-night .header-cta{
+  background:#f2f7fb!important;
+  color:#0c1f30!important;
+}
+.site-header.header-over-hero.header-night .main-nav.nav-open{
+  background:#0c1f30!important;
+  color:#f2f7fb!important;
+}
+.site-header.header-over-hero.header-night .main-nav.nav-open a{
+  border-color:rgb(242 247 251 / 18%)!important;
+}
