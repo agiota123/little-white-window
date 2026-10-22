@@ -93,7 +93,7 @@ function SolarHome() {
   const [need, setNeed] = useState("");
   return <main className={night ? "solar-page night-mode" : "solar-page"}>
     {introVisible && <div className="solar-intro" role="dialog" aria-label="Abertura Solar System" aria-modal="true">
-      <button className="solar-intro-skip" type="button" onClick={skipIntro}>Pular animação <span aria-hidden="true">↗</span></button>
+      <button className="solar-intro-skip" type="button" onClick={skipIntro}>Pular</button>
       <div className="solar-intro-scene" aria-hidden="true">
         <div className="solar-intro-orbit"><span className="solar-intro-ray ray-1"/><span className="solar-intro-ray ray-2"/><span className="solar-intro-ray ray-3"/><span className="solar-intro-ray ray-4"/><span className="solar-intro-ray ray-5"/><span className="solar-intro-ray ray-6"/><span className="solar-intro-ray ray-7"/><span className="solar-intro-ray ray-8"/><span className="solar-intro-sun"><span/></span><span className="solar-intro-beam"/></div>
         <div className="solar-intro-wordmark"><span className="solar-intro-mark"><Sun size={29} strokeWidth={1.6}/></span><span>SOLAR<span>SYSTEM</span><small>ENERGIA QUE TRANSFORMA</small></span></div>
